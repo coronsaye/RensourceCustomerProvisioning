@@ -45,7 +45,7 @@ group :development do
   gem 'spring-watcher-listen', '~> 2.0.0'
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
   gem 'rspec-rails', '~> 3.5'
-
+  #gem 'capistrano-rbenv'
   gem 'capistrano'
   gem 'capistrano3-puma'
   gem 'capistrano-rails', require: false
