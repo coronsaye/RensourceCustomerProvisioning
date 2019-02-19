@@ -51,4 +51,4 @@ set :deploy_to, "/var/www/rcps"
 set :ssh_options, verify_host_key: :always
 #set :rbenv_ruby, "2.6.1"
 
-require 'bundler/capistrano'
+#require 'bundler/capistrano'
