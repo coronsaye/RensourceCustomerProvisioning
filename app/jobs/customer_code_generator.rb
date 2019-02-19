@@ -1,0 +1,3 @@
+class CustomerCodeGenerator
+
+end

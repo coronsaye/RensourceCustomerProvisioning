@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DataSourceManagerImpl" format="xml" multifile-model="true">
+    <data-source source="LOCAL" name="Rails CustomerProvisioningService: test" uuid="ee398132-6bc7-4b90-ba26-4039ac0cd0f7">
+      <driver-ref>postgresql</driver-ref>
+      <synchronize>true</synchronize>
+      <imported>true</imported>
+      <remarks>$PROJECT_DIR$/config/database.yml</remarks>
+      <jdbc-driver>org.postgresql.Driver</jdbc-driver>
+      <jdbc-url>jdbc:postgresql://127.0.0.1:5432/CustomerProvisioningService_test</jdbc-url>
+    </data-source>
+    <data-source source="LOCAL" name="Rails NyTimes: test" uuid="52331ae5-6870-4218-80ab-a9dbab0933e0">
+      <driver-ref>postgresql</driver-ref>
+      <synchronize>true</synchronize>
+      <imported>true</imported>
+      <remarks>$PROJECT_DIR$/../NyTimes/config/database.yml</remarks>
+      <jdbc-driver>org.postgresql.Driver</jdbc-driver>
+      <jdbc-url>jdbc:postgresql://127.0.0.1:5432/NyTimes_test</jdbc-url>
+    </data-source>
+    <data-source source="LOCAL" name="Rails CustomerProvisioningService: production" uuid="a624f392-a0be-4a87-a42e-eaafc6ca069c">
+      <driver-ref>postgresql</driver-ref>
+      <synchronize>true</synchronize>
+      <imported>true</imported>
+      <remarks>$PROJECT_DIR$/config/database.yml</remarks>
+      <jdbc-driver>org.postgresql.Driver</jdbc-driver>
+      <jdbc-url>jdbc:postgresql://127.0.0.1:5432/CustomerProvisioningService_production</jdbc-url>
+    </data-source>
+    <data-source source="LOCAL" name="Rails CustomerProvisioningService: development" uuid="1e73b13e-e651-462d-8422-32a933d0e5e2">
+      <driver-ref>postgresql</driver-ref>
+      <synchronize>true</synchronize>
+      <imported>true</imported>
+      <remarks>$PROJECT_DIR$/config/database.yml</remarks>
+      <jdbc-driver>org.postgresql.Driver</jdbc-driver>
+      <jdbc-url>jdbc:postgresql://127.0.0.1:5432/CustomerProvisioningService_development</jdbc-url>
+    </data-source>
+    <data-source source="LOCAL" name="Rails NyTimes: production" uuid="182bc052-bf2a-42c6-a9c8-5a9354134ba3">
+      <driver-ref>postgresql</driver-ref>
+      <synchronize>true</synchronize>
+      <imported>true</imported>
+      <remarks>$PROJECT_DIR$/../NyTimes/config/database.yml</remarks>
+      <jdbc-driver>org.postgresql.Driver</jdbc-driver>
+      <jdbc-url>jdbc:postgresql://127.0.0.1:5432/NyTimes_production</jdbc-url>
+    </data-source>
+    <data-source source="LOCAL" name="Rails NyTimes: development" uuid="91ac8b77-4001-46f9-b160-5ab80bbb7600">
+      <driver-ref>postgresql</driver-ref>
+      <synchronize>true</synchronize>
+      <imported>true</imported>
+      <remarks>$PROJECT_DIR$/../NyTimes/config/database.yml</remarks>
+      <jdbc-driver>org.postgresql.Driver</jdbc-driver>
+      <jdbc-url>jdbc:postgresql://127.0.0.1:5432/NyTimes_development</jdbc-url>
+    </data-source>
+  </component>
+</project>
