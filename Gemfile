@@ -30,7 +30,7 @@ gem 'figaro'
 
 group :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
-  
+
 
 end
 
@@ -42,10 +42,10 @@ group :development do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
   gem 'rspec-rails', '~> 3.5'
   #gem 'capistrano-rbenv'
-  gem 'capistrano'
+  gem 'capistrano', '~> 3.6'
   gem 'capistrano3-puma'
   gem 'capistrano-rails', require: false
-  gem 'capistrano-bundler', require: false
+  gem 'capistrano-bundler', '~> 1.5'
   gem 'capistrano-rvm'
 end
 

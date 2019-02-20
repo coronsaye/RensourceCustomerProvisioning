@@ -13,15 +13,19 @@ class CustomersController < ApplicationController
       @obj = Account.where('market = ? and status = ?', params[:market], false).first
     end
 
+    @refno = ''
+
     if(@obj != nil)
 
       @obj.status = true
       @obj.save
 
-      render json: '{status : 1,message : '+ @obj.ref_no.to_s + '}'
-    else
-      render json: '{status : 0, message : no records found!}'
+      @refno = @obj.ref_no.to_s
+
     end
+
+
+    render json: '{status : '+ response.status+',message : '+ response.status_message+' ,refno: '+ @refno + '}'
 
   end
 
@@ -34,7 +38,7 @@ class CustomersController < ApplicationController
     market = params[:market]
     count = count.to_i
     start = start.to_i
-    len = 9
+    len = 8
 
     @list = []
 

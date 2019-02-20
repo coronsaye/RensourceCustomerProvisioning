@@ -14,7 +14,9 @@ set :puma_threads,    [4, 16]
 
 # Default deploy_to directory is /var/www/my_app_name
 set :deploy_to, "/var/www/rcps"
+set :linked_dirs, fetch(:linked_dirs, []) << '.bundle'
 
+append :linked_dirs, '.bundle'
 
 # Default branch is :master
 # ask :branch, `git rev-parse --abbrev-ref HEAD`.chomp

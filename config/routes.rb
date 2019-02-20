@@ -4,5 +4,6 @@ Rails.application.routes.draw do
   get 'customers/:type/:market', to: 'customers#fetch'
   get 'customers/select/:type/:market', to: 'customers#select'
   get 'customers/generate/:type/:count/:start/:market', to: 'customers#generate'
+  get 'customers/generate/:type/:market', to: 'customers#generate'
 
 end
