@@ -22,10 +22,11 @@ class CustomersController < ApplicationController
 
       @refno = @obj.ref_no.to_s
 
+
     end
 
 
-    render json: '{status : '+ response.status+',message : '+ response.status_message+' ,refno: '+ @refno + '}'
+    render json: '{status : '+ response.status.to_s+',message : '+ response.status_message+' ,refno: '+ @refno + '}'
 
   end
 
