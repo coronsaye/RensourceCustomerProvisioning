@@ -33,7 +33,7 @@ module CustomerProvisioningService
     config.api_only = true
 
     config.after_initialize do |app|
-      app.routes.append{get '*path', :to => 'errors#not_found'}
+      app.routes.append{match '*path', :to => 'errors#not_found', via: [:get, :post]}
     end
     #config.middleware.use "RequestResponseLogger"
   end
