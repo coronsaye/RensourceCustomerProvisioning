@@ -32,6 +32,9 @@ module CustomerProvisioningService
     # Skip views, helpers and assets when generating a new resource.
     config.api_only = true
 
+    config.after_initialize do |app|
+      app.routes.append{get '*path', :to => 'errors#not_found'}
+    end
     #config.middleware.use "RequestResponseLogger"
   end
 end

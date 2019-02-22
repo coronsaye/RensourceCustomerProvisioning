@@ -6,4 +6,5 @@ Rails.application.routes.draw do
   get 'customers/generate/:type/:count/:start/:market', to: 'customers#generate'
   get 'customers/generate/:type/:market', to: 'customers#generate'
 
+  match '*path', :to => 'application#routing_error'
 end

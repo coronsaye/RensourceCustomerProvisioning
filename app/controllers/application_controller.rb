@@ -1,9 +1,13 @@
 class ApplicationController < ActionController::API
-  rescue_from ActiveRecord::RecordNotFound, with: :record_not_found
 
-  private
 
-  def record_not_found
-    render plain: "404 Not Found", status: 404
+  def routing_error(error = 'Routing error', status = :not_found, exception=nil)
+    render_exception(404, "Routing Error", exception)
   end
+
+  def action_missing(m, *args, &block)
+    Rails.logger.error(m)
+    redirect_to 'error#index'
+  end
+
 end
