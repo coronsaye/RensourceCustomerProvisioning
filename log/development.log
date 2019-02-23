@@ -1,0 +1,30 @@
+Started GET "/customers/select/1/IPO" for 127.0.0.1 at 2019-02-22 13:16:47 +0100
+  [1m[35m (192.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ config.ru:20
+Processing by CustomersController#select as HTML
+  Parameters: {"type"=>"1", "market"=>"IPO"}
+  [1m[36mCustomer Load (159.3ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE (market = 'IPO' and status = FALSE) ORDER BY "customers"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/customers_controller.rb:12
+  [1m[35m (159.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/customers_controller.rb:22
+  [1m[36mCustomer Update (168.0ms)[0m  [1m[33mUPDATE "customers" SET "status" = $1, "updated_at" = $2 WHERE "customers"."id" = $3[0m  [["status", true], ["updated_at", "2019-02-22 12:17:00.781872"], ["id", 31207]]
+  ↳ app/controllers/customers_controller.rb:22
+  [1m[35m (157.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/customers_controller.rb:22
+Completed 200 OK in 1224ms (Views: 0.2ms | ActiveRecord: 1199.3ms)
+
+
+  [1m[35m (159.4ms)[0m  [1m[34mSELECT pg_try_advisory_lock(1842063040331842335)[0m
+  ↳ /Users/rensource/.rvm/rubies/ruby-2.6.1/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (205.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/rensource/.rvm/rubies/ruby-2.6.1/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[36mActiveRecord::InternalMetadata Load (204.6ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ /Users/rensource/.rvm/rubies/ruby-2.6.1/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (292.9ms)[0m  [1m[35mBEGIN[0m
+  ↳ /Users/rensource/.rvm/rubies/ruby-2.6.1/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (191.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ /Users/rensource/.rvm/rubies/ruby-2.6.1/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (206.3ms)[0m  [1m[34mSELECT pg_advisory_unlock(1842063040331842335)[0m
+  ↳ /Users/rensource/.rvm/rubies/ruby-2.6.1/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (204.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/rensource/.rvm/rubies/ruby-2.6.1/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273

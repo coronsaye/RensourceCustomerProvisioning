@@ -16,7 +16,7 @@ set :puma_threads,    [4, 16]
 set :deploy_to, "/var/www/rcps"
 set :linked_dirs, fetch(:linked_dirs, []) << '.bundle'
 
-append :linked_dirs, '.bundle'
+#append :linked_dirs, '.bundle'
 
 # Default branch is :master
 # ask :branch, `git rev-parse --abbrev-ref HEAD`.chomp
@@ -53,4 +53,4 @@ append :linked_dirs, '.bundle'
 set :ssh_options, verify_host_key: :always
 #set :rbenv_ruby, "2.6.1"
 
-#require 'bundler/capistrano'
+require 'bundler/capistrano'

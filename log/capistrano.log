@@ -1,0 +1,303 @@
+# Logfile created on 2019-02-22 12:49:47 +0100 by logger.rb/66358
+  INFO ---------------------------------------------------------------------------
+  INFO START 2019-02-22 12:49:47 +0100 cap production deploy
+  INFO ---------------------------------------------------------------------------
+ DEBUG [c34bb5a8] Running [ -d ~/.rvm ] as ec2-user@3.120.234.9
+ DEBUG [c34bb5a8] Command: [ -d ~/.rvm ]
+ DEBUG [fefda6f3] Finished in 2.351 seconds with exit status 0 (successful).
+ DEBUG [335ca804] Running ~/.rvm/bin/rvm version as ec2-user@3.120.234.9
+ DEBUG [335ca804] Command: ~/.rvm/bin/rvm version
+ DEBUG [7b2926e9] 	rvm 1.29.7 (latest) by Michal Papis, Piotr Kuczynski, Wayne E. Seguin [https://rvm.io]
+ DEBUG [7b2926e9] Finished in 0.859 seconds with exit status 0 (successful).
+ DEBUG [c37915e1] Running ~/.rvm/bin/rvm current as ec2-user@3.120.234.9
+ DEBUG [c37915e1] Command: ~/.rvm/bin/rvm current
+ DEBUG [25afc202] 	ruby-2.5.1
+ DEBUG [25afc202] Finished in 0.809 seconds with exit status 0 (successful).
+ DEBUG [385ba963] Running ~/.rvm/bin/rvm default do ruby --version as ec2-user@3.120.234.9
+ DEBUG [385ba963] Command: ~/.rvm/bin/rvm default do ruby --version
+ DEBUG [afdd9892] 	ruby 2.5.1p57 (2018-03-29 revision 63029) [x86_64-linux]
+ DEBUG [afdd9892] Finished in 0.914 seconds with exit status 0 (successful).
+  INFO [2ffebd4e] Running /usr/bin/env mkdir -p /tmp as ec2-user@3.120.234.9
+ DEBUG [2ffebd4e] Command: /usr/bin/env mkdir -p /tmp
+  INFO [ead6b39e] Finished in 0.715 seconds with exit status 0 (successful).
+ DEBUG Uploading /tmp/git-ssh-CustomerProvisioning-production-rensource.sh 0.0%
+  INFO Uploading /tmp/git-ssh-CustomerProvisioning-production-rensource.sh 100.0%
+  INFO [f1c522c5] Running /usr/bin/env chmod 700 /tmp/git-ssh-CustomerProvisioning-production-rensource.sh as ec2-user@3.120.234.9
+ DEBUG [f1c522c5] Command: /usr/bin/env chmod 700 /tmp/git-ssh-CustomerProvisioning-production-rensource.sh
+  INFO [3977d4e1] Finished in 0.717 seconds with exit status 0 (successful).
+  INFO [6de82fa2] Running /usr/bin/env git ls-remote https://github.com/coronsaye/RensourceCustomerProvisioning.git HEAD as ec2-user@3.120.234.9
+ DEBUG [6de82fa2] Command: ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-CustomerProvisioning-production-rensource.sh" ; /usr/bin/env git ls-remote https://github.com/coronsaye/RensourceCustomerProvisioning.git HEAD )
+ DEBUG [904ceca6] 	a74589349b188740f4e978659e1a009107b094c2	HEAD
+  INFO [904ceca6] Finished in 1.122 seconds with exit status 0 (successful).
+  INFO [6097d1c9] Running /usr/bin/env mkdir -p /var/www/rcps/shared /var/www/rcps/releases as ec2-user@3.120.234.9
+ DEBUG [6097d1c9] Command: /usr/bin/env mkdir -p /var/www/rcps/shared /var/www/rcps/releases
+  INFO [6cacd0d5] Finished in 0.619 seconds with exit status 0 (successful).
+  INFO [e7499810] Running /usr/bin/env mkdir -p /var/www/rcps/shared/.bundle /var/www/rcps/shared/.bundle as ec2-user@3.120.234.9
+ DEBUG [e7499810] Command: /usr/bin/env mkdir -p /var/www/rcps/shared/.bundle /var/www/rcps/shared/.bundle
+  INFO [a62a5362] Finished in 0.713 seconds with exit status 0 (successful).
+ DEBUG [d4bc88c1] Running [ -f /var/www/rcps/current/REVISION ] as ec2-user@3.120.234.9
+ DEBUG [d4bc88c1] Command: [ -f /var/www/rcps/current/REVISION ]
+ DEBUG [7b404370] Finished in 0.688 seconds with exit status 1 (failed).
+ DEBUG [299400b0] Running [ -f /var/www/rcps/repo/HEAD ] as ec2-user@3.120.234.9
+ DEBUG [299400b0] Command: [ -f /var/www/rcps/repo/HEAD ]
+ DEBUG [d939d09b] Finished in 0.743 seconds with exit status 0 (successful).
+  INFO The repository mirror is at /var/www/rcps/repo
+ DEBUG [97f0ded7] Running if test ! -d /var/www/rcps/repo; then echo "Directory does not exist '/var/www/rcps/repo'" 1>&2; false; fi as ec2-user@3.120.234.9
+ DEBUG [97f0ded7] Command: if test ! -d /var/www/rcps/repo; then echo "Directory does not exist '/var/www/rcps/repo'" 1>&2; false; fi
+ DEBUG [de7a380a] Finished in 0.717 seconds with exit status 0 (successful).
+  INFO [9a9238c7] Running /usr/bin/env git remote set-url origin https://github.com/coronsaye/RensourceCustomerProvisioning.git as ec2-user@3.120.234.9
+ DEBUG [9a9238c7] Command: cd /var/www/rcps/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-CustomerProvisioning-production-rensource.sh" ; /usr/bin/env git remote set-url origin https://github.com/coronsaye/RensourceCustomerProvisioning.git )
+  INFO [2002dd29] Finished in 0.675 seconds with exit status 0 (successful).
+  INFO [8b38c961] Running /usr/bin/env git remote update --prune as ec2-user@3.120.234.9
+ DEBUG [8b38c961] Command: cd /var/www/rcps/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-CustomerProvisioning-production-rensource.sh" ; /usr/bin/env git remote update --prune )
+ DEBUG [756b695b] 	Fetching origin
+ DEBUG [756b695b] 	From https://github.com/coronsaye/RensourceCustomerProvisioning
+   5c1a841..a745893  master     -> master
+  INFO [756b695b] Finished in 5.672 seconds with exit status 0 (successful).
+ DEBUG [edc0a704] Running if test ! -d /var/www/rcps/repo; then echo "Directory does not exist '/var/www/rcps/repo'" 1>&2; false; fi as ec2-user@3.120.234.9
+ DEBUG [edc0a704] Command: if test ! -d /var/www/rcps/repo; then echo "Directory does not exist '/var/www/rcps/repo'" 1>&2; false; fi
+ DEBUG [facaf310] Finished in 0.612 seconds with exit status 0 (successful).
+  INFO [208e2ddb] Running /usr/bin/env mkdir -p /var/www/rcps/releases/20190222114958 as ec2-user@3.120.234.9
+ DEBUG [208e2ddb] Command: cd /var/www/rcps/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-CustomerProvisioning-production-rensource.sh" ; /usr/bin/env mkdir -p /var/www/rcps/releases/20190222114958 )
+  INFO [d6ec6982] Finished in 0.716 seconds with exit status 0 (successful).
+  INFO [cf54426b] Running /usr/bin/env git archive master | /usr/bin/env tar -x -f - -C /var/www/rcps/releases/20190222114958 as ec2-user@3.120.234.9
+ DEBUG [cf54426b] Command: cd /var/www/rcps/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-CustomerProvisioning-production-rensource.sh" ; /usr/bin/env git archive master | /usr/bin/env tar -x -f - -C /var/www/rcps/releases/20190222114958 )
+  INFO [17c378ab] Finished in 1.089 seconds with exit status 0 (successful).
+ DEBUG [79c4d9ce] Running if test ! -d /var/www/rcps/repo; then echo "Directory does not exist '/var/www/rcps/repo'" 1>&2; false; fi as ec2-user@3.120.234.9
+ DEBUG [79c4d9ce] Command: if test ! -d /var/www/rcps/repo; then echo "Directory does not exist '/var/www/rcps/repo'" 1>&2; false; fi
+ DEBUG [0f94db42] Finished in 0.628 seconds with exit status 0 (successful).
+ DEBUG [15cca1eb] Running /usr/bin/env git rev-list --max-count=1 master as ec2-user@3.120.234.9
+ DEBUG [15cca1eb] Command: cd /var/www/rcps/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-CustomerProvisioning-production-rensource.sh" ; /usr/bin/env git rev-list --max-count=1 master )
+ DEBUG [c832877b] 	a74589349b188740f4e978659e1a009107b094c2
+ DEBUG [c832877b] Finished in 0.542 seconds with exit status 0 (successful).
+ DEBUG [309f917e] Running if test ! -d /var/www/rcps/releases/20190222114958; then echo "Directory does not exist '/var/www/rcps/releases/20190222114958'" 1>&2; false; fi as ec2-user@3.120.234.9
+ DEBUG [309f917e] Command: if test ! -d /var/www/rcps/releases/20190222114958; then echo "Directory does not exist '/var/www/rcps/releases/20190222114958'" 1>&2; false; fi
+ DEBUG [2e829306] Finished in 0.678 seconds with exit status 0 (successful).
+  INFO [42a3db82] Running /usr/bin/env echo "a74589349b188740f4e978659e1a009107b094c2" > REVISION as ec2-user@3.120.234.9
+ DEBUG [42a3db82] Command: cd /var/www/rcps/releases/20190222114958 && /usr/bin/env echo "a74589349b188740f4e978659e1a009107b094c2" > REVISION
+  INFO [10df7264] Finished in 0.641 seconds with exit status 0 (successful).
+  INFO [c948ad56] Running /usr/bin/env mkdir -p /var/www/rcps/releases/20190222114958 as ec2-user@3.120.234.9
+ DEBUG [c948ad56] Command: /usr/bin/env mkdir -p /var/www/rcps/releases/20190222114958
+  INFO [f82e4eda] Finished in 0.613 seconds with exit status 0 (successful).
+ DEBUG [54a02210] Running [ -L /var/www/rcps/releases/20190222114958/.bundle ] as ec2-user@3.120.234.9
+ DEBUG [54a02210] Command: [ -L /var/www/rcps/releases/20190222114958/.bundle ]
+ DEBUG [7738a6d6] Finished in 0.662 seconds with exit status 1 (failed).
+ DEBUG [36286aea] Running [ -d /var/www/rcps/releases/20190222114958/.bundle ] as ec2-user@3.120.234.9
+ DEBUG [36286aea] Command: [ -d /var/www/rcps/releases/20190222114958/.bundle ]
+ DEBUG [54af782d] Finished in 0.566 seconds with exit status 1 (failed).
+  INFO [b6a0e7f9] Running /usr/bin/env ln -s /var/www/rcps/shared/.bundle /var/www/rcps/releases/20190222114958/.bundle as ec2-user@3.120.234.9
+ DEBUG [b6a0e7f9] Command: /usr/bin/env ln -s /var/www/rcps/shared/.bundle /var/www/rcps/releases/20190222114958/.bundle
+  INFO [c1b9b1c4] Finished in 0.617 seconds with exit status 0 (successful).
+ DEBUG [de52d5c4] Running [ -L /var/www/rcps/releases/20190222114958/.bundle ] as ec2-user@3.120.234.9
+ DEBUG [de52d5c4] Command: [ -L /var/www/rcps/releases/20190222114958/.bundle ]
+ DEBUG [769b3bcf] Finished in 0.610 seconds with exit status 0 (successful).
+ DEBUG [5bfc0cec] Running if test ! -d /var/www/rcps/releases/20190222114958; then echo "Directory does not exist '/var/www/rcps/releases/20190222114958'" 1>&2; false; fi as ec2-user@3.120.234.9
+ DEBUG [5bfc0cec] Command: if test ! -d /var/www/rcps/releases/20190222114958; then echo "Directory does not exist '/var/www/rcps/releases/20190222114958'" 1>&2; false; fi
+ DEBUG [782c3157] Finished in 0.817 seconds with exit status 0 (successful).
+ DEBUG [ef841352] Running ~/.rvm/bin/rvm default do bundle check --path /var/www/rcps/shared/bundle as ec2-user@3.120.234.9
+ DEBUG [ef841352] Command: cd /var/www/rcps/releases/20190222114958 && ~/.rvm/bin/rvm default do bundle check --path /var/www/rcps/shared/bundle
+ DEBUG [6c52403d] 	You must use Bundler 2 or greater with this lockfile.
+ DEBUG [6c52403d] Finished in 1.229 seconds with exit status 20 (failed).
+  INFO [38b0e18b] Running ~/.rvm/bin/rvm default do bundle install --path /var/www/rcps/shared/bundle --jobs 4 --without development test --deployment --quiet as ec2-user@3.120.234.9
+ DEBUG [38b0e18b] Command: cd /var/www/rcps/releases/20190222114958 && ~/.rvm/bin/rvm default do bundle install --path /var/www/rcps/shared/bundle --jobs 4 --without development test --deployment --quiet
+ DEBUG [85e44435] 	You must use Bundler 2 or greater with this lockfile.
+  INFO ---------------------------------------------------------------------------
+  INFO START 2019-02-22 12:56:30 +0100 cap production deploy
+  INFO ---------------------------------------------------------------------------
+ DEBUG [a1392dd1] Running [ -d ~/.rvm ] as ec2-user@3.120.234.9
+ DEBUG [a1392dd1] Command: [ -d ~/.rvm ]
+ DEBUG [27b8e9ba] Finished in 2.368 seconds with exit status 0 (successful).
+ DEBUG [87c0577b] Running ~/.rvm/bin/rvm version as ec2-user@3.120.234.9
+ DEBUG [87c0577b] Command: ~/.rvm/bin/rvm version
+ DEBUG [e54311ca] 	rvm 1.29.7 (latest) by Michal Papis, Piotr Kuczynski, Wayne E. Seguin [https://rvm.io]
+ DEBUG [e54311ca] Finished in 0.735 seconds with exit status 0 (successful).
+ DEBUG [148a6ed8] Running ~/.rvm/bin/rvm current as ec2-user@3.120.234.9
+ DEBUG [148a6ed8] Command: ~/.rvm/bin/rvm current
+ DEBUG [22ae32df] 	ruby-2.5.1
+ DEBUG [22ae32df] Finished in 0.873 seconds with exit status 0 (successful).
+ DEBUG [30a4e95d] Running ~/.rvm/bin/rvm default do ruby --version as ec2-user@3.120.234.9
+ DEBUG [30a4e95d] Command: ~/.rvm/bin/rvm default do ruby --version
+ DEBUG [d27f8939] 	ruby 2.5.1p57 (2018-03-29 revision 63029) [x86_64-linux]
+ DEBUG [d27f8939] Finished in 0.977 seconds with exit status 0 (successful).
+  INFO [6fec5cc9] Running /usr/bin/env mkdir -p /tmp as ec2-user@3.120.234.9
+ DEBUG [6fec5cc9] Command: /usr/bin/env mkdir -p /tmp
+  INFO [5c7b2cb0] Finished in 0.816 seconds with exit status 0 (successful).
+ DEBUG Uploading /tmp/git-ssh-CustomerProvisioning-production-rensource.sh 0.0%
+  INFO Uploading /tmp/git-ssh-CustomerProvisioning-production-rensource.sh 100.0%
+  INFO [9e0af9db] Running /usr/bin/env chmod 700 /tmp/git-ssh-CustomerProvisioning-production-rensource.sh as ec2-user@3.120.234.9
+ DEBUG [9e0af9db] Command: /usr/bin/env chmod 700 /tmp/git-ssh-CustomerProvisioning-production-rensource.sh
+  INFO [df0cf66c] Finished in 0.676 seconds with exit status 0 (successful).
+  INFO [3820541c] Running /usr/bin/env git ls-remote https://github.com/coronsaye/RensourceCustomerProvisioning.git HEAD as ec2-user@3.120.234.9
+ DEBUG [3820541c] Command: ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-CustomerProvisioning-production-rensource.sh" ; /usr/bin/env git ls-remote https://github.com/coronsaye/RensourceCustomerProvisioning.git HEAD )
+ DEBUG [7ef26b2f] 	a74589349b188740f4e978659e1a009107b094c2	HEAD
+  INFO [7ef26b2f] Finished in 1.027 seconds with exit status 0 (successful).
+  INFO [84235af3] Running /usr/bin/env mkdir -p /var/www/rcps/shared /var/www/rcps/releases as ec2-user@3.120.234.9
+ DEBUG [84235af3] Command: /usr/bin/env mkdir -p /var/www/rcps/shared /var/www/rcps/releases
+  INFO [8140798c] Finished in 0.506 seconds with exit status 0 (successful).
+  INFO [37b8f5a1] Running /usr/bin/env mkdir -p /var/www/rcps/shared/.bundle /var/www/rcps/shared/.bundle as ec2-user@3.120.234.9
+ DEBUG [37b8f5a1] Command: /usr/bin/env mkdir -p /var/www/rcps/shared/.bundle /var/www/rcps/shared/.bundle
+  INFO [cb0d9ab0] Finished in 0.698 seconds with exit status 0 (successful).
+ DEBUG [ae457406] Running [ -f /var/www/rcps/current/REVISION ] as ec2-user@3.120.234.9
+ DEBUG [ae457406] Command: [ -f /var/www/rcps/current/REVISION ]
+ DEBUG [01c51997] Finished in 0.543 seconds with exit status 1 (failed).
+ DEBUG [80bd8542] Running [ -f /var/www/rcps/repo/HEAD ] as ec2-user@3.120.234.9
+ DEBUG [80bd8542] Command: [ -f /var/www/rcps/repo/HEAD ]
+ DEBUG [1be6dee0] Finished in 0.558 seconds with exit status 0 (successful).
+  INFO The repository mirror is at /var/www/rcps/repo
+ DEBUG [6f8452e5] Running if test ! -d /var/www/rcps/repo; then echo "Directory does not exist '/var/www/rcps/repo'" 1>&2; false; fi as ec2-user@3.120.234.9
+ DEBUG [6f8452e5] Command: if test ! -d /var/www/rcps/repo; then echo "Directory does not exist '/var/www/rcps/repo'" 1>&2; false; fi
+ DEBUG [423971c2] Finished in 0.536 seconds with exit status 0 (successful).
+  INFO [7dcf3ded] Running /usr/bin/env git remote set-url origin https://github.com/coronsaye/RensourceCustomerProvisioning.git as ec2-user@3.120.234.9
+ DEBUG [7dcf3ded] Command: cd /var/www/rcps/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-CustomerProvisioning-production-rensource.sh" ; /usr/bin/env git remote set-url origin https://github.com/coronsaye/RensourceCustomerProvisioning.git )
+  INFO [22ad1e95] Finished in 0.736 seconds with exit status 0 (successful).
+  INFO [049cf053] Running /usr/bin/env git remote update --prune as ec2-user@3.120.234.9
+ DEBUG [049cf053] Command: cd /var/www/rcps/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-CustomerProvisioning-production-rensource.sh" ; /usr/bin/env git remote update --prune )
+ DEBUG [7fc746e7] 	Fetching origin
+  INFO [7fc746e7] Finished in 1.145 seconds with exit status 0 (successful).
+ DEBUG [d619e61d] Running if test ! -d /var/www/rcps/repo; then echo "Directory does not exist '/var/www/rcps/repo'" 1>&2; false; fi as ec2-user@3.120.234.9
+ DEBUG [d619e61d] Command: if test ! -d /var/www/rcps/repo; then echo "Directory does not exist '/var/www/rcps/repo'" 1>&2; false; fi
+ DEBUG [85f2d403] Finished in 0.636 seconds with exit status 0 (successful).
+  INFO [93e85212] Running /usr/bin/env mkdir -p /var/www/rcps/releases/20190222115642 as ec2-user@3.120.234.9
+ DEBUG [93e85212] Command: cd /var/www/rcps/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-CustomerProvisioning-production-rensource.sh" ; /usr/bin/env mkdir -p /var/www/rcps/releases/20190222115642 )
+  INFO [cc30bcb9] Finished in 0.640 seconds with exit status 0 (successful).
+  INFO [54e3eb16] Running /usr/bin/env git archive master | /usr/bin/env tar -x -f - -C /var/www/rcps/releases/20190222115642 as ec2-user@3.120.234.9
+ DEBUG [54e3eb16] Command: cd /var/www/rcps/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-CustomerProvisioning-production-rensource.sh" ; /usr/bin/env git archive master | /usr/bin/env tar -x -f - -C /var/www/rcps/releases/20190222115642 )
+  INFO [8deaeb0d] Finished in 0.975 seconds with exit status 0 (successful).
+ DEBUG [3ddd19c3] Running if test ! -d /var/www/rcps/repo; then echo "Directory does not exist '/var/www/rcps/repo'" 1>&2; false; fi as ec2-user@3.120.234.9
+ DEBUG [3ddd19c3] Command: if test ! -d /var/www/rcps/repo; then echo "Directory does not exist '/var/www/rcps/repo'" 1>&2; false; fi
+ DEBUG [9c3f4117] Finished in 0.696 seconds with exit status 0 (successful).
+ DEBUG [8e3ab2c7] Running /usr/bin/env git rev-list --max-count=1 master as ec2-user@3.120.234.9
+ DEBUG [8e3ab2c7] Command: cd /var/www/rcps/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-CustomerProvisioning-production-rensource.sh" ; /usr/bin/env git rev-list --max-count=1 master )
+ DEBUG [9877c7ce] 	a74589349b188740f4e978659e1a009107b094c2
+ DEBUG [9877c7ce] Finished in 0.688 seconds with exit status 0 (successful).
+ DEBUG [b39266df] Running if test ! -d /var/www/rcps/releases/20190222115642; then echo "Directory does not exist '/var/www/rcps/releases/20190222115642'" 1>&2; false; fi as ec2-user@3.120.234.9
+ DEBUG [b39266df] Command: if test ! -d /var/www/rcps/releases/20190222115642; then echo "Directory does not exist '/var/www/rcps/releases/20190222115642'" 1>&2; false; fi
+ DEBUG [3064ac3c] Finished in 0.640 seconds with exit status 0 (successful).
+  INFO [4b562c22] Running /usr/bin/env echo "a74589349b188740f4e978659e1a009107b094c2" > REVISION as ec2-user@3.120.234.9
+ DEBUG [4b562c22] Command: cd /var/www/rcps/releases/20190222115642 && /usr/bin/env echo "a74589349b188740f4e978659e1a009107b094c2" > REVISION
+  INFO [d2b06fbd] Finished in 1.375 seconds with exit status 0 (successful).
+  INFO [80501c8b] Running /usr/bin/env mkdir -p /var/www/rcps/releases/20190222115642 as ec2-user@3.120.234.9
+ DEBUG [80501c8b] Command: /usr/bin/env mkdir -p /var/www/rcps/releases/20190222115642
+  INFO [14ee4d24] Finished in 0.691 seconds with exit status 0 (successful).
+ DEBUG [6a00223c] Running [ -L /var/www/rcps/releases/20190222115642/.bundle ] as ec2-user@3.120.234.9
+ DEBUG [6a00223c] Command: [ -L /var/www/rcps/releases/20190222115642/.bundle ]
+ DEBUG [304afe47] Finished in 0.557 seconds with exit status 1 (failed).
+ DEBUG [438dcc03] Running [ -d /var/www/rcps/releases/20190222115642/.bundle ] as ec2-user@3.120.234.9
+ DEBUG [438dcc03] Command: [ -d /var/www/rcps/releases/20190222115642/.bundle ]
+ DEBUG [2bd22876] Finished in 0.575 seconds with exit status 1 (failed).
+  INFO [8292cc0f] Running /usr/bin/env ln -s /var/www/rcps/shared/.bundle /var/www/rcps/releases/20190222115642/.bundle as ec2-user@3.120.234.9
+ DEBUG [8292cc0f] Command: /usr/bin/env ln -s /var/www/rcps/shared/.bundle /var/www/rcps/releases/20190222115642/.bundle
+  INFO [3f3b74ca] Finished in 0.594 seconds with exit status 0 (successful).
+ DEBUG [e10dc1e8] Running [ -L /var/www/rcps/releases/20190222115642/.bundle ] as ec2-user@3.120.234.9
+ DEBUG [e10dc1e8] Command: [ -L /var/www/rcps/releases/20190222115642/.bundle ]
+ DEBUG [e031458b] Finished in 0.593 seconds with exit status 0 (successful).
+ DEBUG [51e64c43] Running if test ! -d /var/www/rcps/releases/20190222115642; then echo "Directory does not exist '/var/www/rcps/releases/20190222115642'" 1>&2; false; fi as ec2-user@3.120.234.9
+ DEBUG [51e64c43] Command: if test ! -d /var/www/rcps/releases/20190222115642; then echo "Directory does not exist '/var/www/rcps/releases/20190222115642'" 1>&2; false; fi
+ DEBUG [b278b008] Finished in 0.627 seconds with exit status 0 (successful).
+ DEBUG [e0df4007] Running ~/.rvm/bin/rvm default do bundle check --path /var/www/rcps/shared/bundle as ec2-user@3.120.234.9
+ DEBUG [e0df4007] Command: cd /var/www/rcps/releases/20190222115642 && ~/.rvm/bin/rvm default do bundle check --path /var/www/rcps/shared/bundle
+ DEBUG [8c61ac5f] 	You must use Bundler 2 or greater with this lockfile.
+ DEBUG [8c61ac5f] Finished in 1.199 seconds with exit status 20 (failed).
+  INFO [120db6fc] Running ~/.rvm/bin/rvm default do bundle install --path /var/www/rcps/shared/bundle --jobs 4 --without development test --deployment --quiet as ec2-user@3.120.234.9
+ DEBUG [120db6fc] Command: cd /var/www/rcps/releases/20190222115642 && ~/.rvm/bin/rvm default do bundle install --path /var/www/rcps/shared/bundle --jobs 4 --without development test --deployment --quiet
+ DEBUG [746f474c] 	You must use Bundler 2 or greater with this lockfile.
+  INFO ---------------------------------------------------------------------------
+  INFO START 2019-02-22 12:58:13 +0100 cap production deploy
+  INFO ---------------------------------------------------------------------------
+ DEBUG [e742e539] Running [ -d ~/.rvm ] as ec2-user@3.120.234.9
+ DEBUG [e742e539] Command: [ -d ~/.rvm ]
+ DEBUG [33cb721c] Finished in 2.669 seconds with exit status 0 (successful).
+ DEBUG [064ea7f8] Running ~/.rvm/bin/rvm version as ec2-user@3.120.234.9
+ DEBUG [064ea7f8] Command: ~/.rvm/bin/rvm version
+ DEBUG [f5a51196] 	rvm 1.29.7 (latest) by Michal Papis, Piotr Kuczynski, Wayne E. Seguin [https://rvm.io]
+ DEBUG [f5a51196] Finished in 0.896 seconds with exit status 0 (successful).
+ DEBUG [261ed609] Running ~/.rvm/bin/rvm current as ec2-user@3.120.234.9
+ DEBUG [261ed609] Command: ~/.rvm/bin/rvm current
+ DEBUG [3cf5a98c] 	ruby-2.5.1
+ DEBUG [3cf5a98c] Finished in 0.838 seconds with exit status 0 (successful).
+ DEBUG [cc9de3c9] Running ~/.rvm/bin/rvm default do ruby --version as ec2-user@3.120.234.9
+ DEBUG [cc9de3c9] Command: ~/.rvm/bin/rvm default do ruby --version
+ DEBUG [79ab6cf8] 	ruby 2.5.1p57 (2018-03-29 revision 63029) [x86_64-linux]
+ DEBUG [79ab6cf8] Finished in 0.825 seconds with exit status 0 (successful).
+  INFO [3389c280] Running /usr/bin/env mkdir -p /tmp as ec2-user@3.120.234.9
+ DEBUG [3389c280] Command: /usr/bin/env mkdir -p /tmp
+  INFO [16222879] Finished in 0.563 seconds with exit status 0 (successful).
+ DEBUG Uploading /tmp/git-ssh-CustomerProvisioning-production-rensource.sh 0.0%
+  INFO Uploading /tmp/git-ssh-CustomerProvisioning-production-rensource.sh 100.0%
+  INFO [67b798df] Running /usr/bin/env chmod 700 /tmp/git-ssh-CustomerProvisioning-production-rensource.sh as ec2-user@3.120.234.9
+ DEBUG [67b798df] Command: /usr/bin/env chmod 700 /tmp/git-ssh-CustomerProvisioning-production-rensource.sh
+  INFO [cbfe3d7d] Finished in 0.817 seconds with exit status 0 (successful).
+  INFO [c9982626] Running /usr/bin/env git ls-remote https://github.com/coronsaye/RensourceCustomerProvisioning.git HEAD as ec2-user@3.120.234.9
+ DEBUG [c9982626] Command: ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-CustomerProvisioning-production-rensource.sh" ; /usr/bin/env git ls-remote https://github.com/coronsaye/RensourceCustomerProvisioning.git HEAD )
+ DEBUG [bdb0b1dd] 	a74589349b188740f4e978659e1a009107b094c2	HEAD
+  INFO [bdb0b1dd] Finished in 1.009 seconds with exit status 0 (successful).
+  INFO [efc8ae3d] Running /usr/bin/env mkdir -p /var/www/rcps/shared /var/www/rcps/releases as ec2-user@3.120.234.9
+ DEBUG [efc8ae3d] Command: /usr/bin/env mkdir -p /var/www/rcps/shared /var/www/rcps/releases
+  INFO [188f6163] Finished in 0.678 seconds with exit status 0 (successful).
+  INFO [65ccc5b9] Running /usr/bin/env mkdir -p /var/www/rcps/shared/.bundle /var/www/rcps/shared/.bundle as ec2-user@3.120.234.9
+ DEBUG [65ccc5b9] Command: /usr/bin/env mkdir -p /var/www/rcps/shared/.bundle /var/www/rcps/shared/.bundle
+  INFO [4d0d2303] Finished in 0.562 seconds with exit status 0 (successful).
+ DEBUG [bee9a8f6] Running [ -f /var/www/rcps/current/REVISION ] as ec2-user@3.120.234.9
+ DEBUG [bee9a8f6] Command: [ -f /var/www/rcps/current/REVISION ]
+ DEBUG [66a3602d] Finished in 0.695 seconds with exit status 1 (failed).
+ DEBUG [dacbdea4] Running [ -f /var/www/rcps/repo/HEAD ] as ec2-user@3.120.234.9
+ DEBUG [dacbdea4] Command: [ -f /var/www/rcps/repo/HEAD ]
+ DEBUG [eb21bc77] Finished in 0.736 seconds with exit status 0 (successful).
+  INFO The repository mirror is at /var/www/rcps/repo
+ DEBUG [fb5d5245] Running if test ! -d /var/www/rcps/repo; then echo "Directory does not exist '/var/www/rcps/repo'" 1>&2; false; fi as ec2-user@3.120.234.9
+ DEBUG [fb5d5245] Command: if test ! -d /var/www/rcps/repo; then echo "Directory does not exist '/var/www/rcps/repo'" 1>&2; false; fi
+ DEBUG [525f3ab6] Finished in 0.716 seconds with exit status 0 (successful).
+  INFO [4bf4b3aa] Running /usr/bin/env git remote set-url origin https://github.com/coronsaye/RensourceCustomerProvisioning.git as ec2-user@3.120.234.9
+ DEBUG [4bf4b3aa] Command: cd /var/www/rcps/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-CustomerProvisioning-production-rensource.sh" ; /usr/bin/env git remote set-url origin https://github.com/coronsaye/RensourceCustomerProvisioning.git )
+  INFO [661dbe25] Finished in 0.613 seconds with exit status 0 (successful).
+  INFO [004bf7b7] Running /usr/bin/env git remote update --prune as ec2-user@3.120.234.9
+ DEBUG [004bf7b7] Command: cd /var/www/rcps/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-CustomerProvisioning-production-rensource.sh" ; /usr/bin/env git remote update --prune )
+ DEBUG [049f0526] 	Fetching origin
+  INFO [049f0526] Finished in 1.127 seconds with exit status 0 (successful).
+ DEBUG [7e17d62c] Running if test ! -d /var/www/rcps/repo; then echo "Directory does not exist '/var/www/rcps/repo'" 1>&2; false; fi as ec2-user@3.120.234.9
+ DEBUG [7e17d62c] Command: if test ! -d /var/www/rcps/repo; then echo "Directory does not exist '/var/www/rcps/repo'" 1>&2; false; fi
+ DEBUG [37918311] Finished in 0.612 seconds with exit status 0 (successful).
+  INFO [e9264dcd] Running /usr/bin/env mkdir -p /var/www/rcps/releases/20190222115825 as ec2-user@3.120.234.9
+ DEBUG [e9264dcd] Command: cd /var/www/rcps/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-CustomerProvisioning-production-rensource.sh" ; /usr/bin/env mkdir -p /var/www/rcps/releases/20190222115825 )
+  INFO [b75d549b] Finished in 0.936 seconds with exit status 0 (successful).
+  INFO [db72b0d9] Running /usr/bin/env git archive master | /usr/bin/env tar -x -f - -C /var/www/rcps/releases/20190222115825 as ec2-user@3.120.234.9
+ DEBUG [db72b0d9] Command: cd /var/www/rcps/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-CustomerProvisioning-production-rensource.sh" ; /usr/bin/env git archive master | /usr/bin/env tar -x -f - -C /var/www/rcps/releases/20190222115825 )
+  INFO [94e459f3] Finished in 1.029 seconds with exit status 0 (successful).
+ DEBUG [2923b8aa] Running if test ! -d /var/www/rcps/repo; then echo "Directory does not exist '/var/www/rcps/repo'" 1>&2; false; fi as ec2-user@3.120.234.9
+ DEBUG [2923b8aa] Command: if test ! -d /var/www/rcps/repo; then echo "Directory does not exist '/var/www/rcps/repo'" 1>&2; false; fi
+ DEBUG [1676d59a] Finished in 0.696 seconds with exit status 0 (successful).
+ DEBUG [da782212] Running /usr/bin/env git rev-list --max-count=1 master as ec2-user@3.120.234.9
+ DEBUG [da782212] Command: cd /var/www/rcps/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-CustomerProvisioning-production-rensource.sh" ; /usr/bin/env git rev-list --max-count=1 master )
+ DEBUG [5936612f] 	a74589349b188740f4e978659e1a009107b094c2
+ DEBUG [5936612f] Finished in 0.648 seconds with exit status 0 (successful).
+ DEBUG [2fbcc38f] Running if test ! -d /var/www/rcps/releases/20190222115825; then echo "Directory does not exist '/var/www/rcps/releases/20190222115825'" 1>&2; false; fi as ec2-user@3.120.234.9
+ DEBUG [2fbcc38f] Command: if test ! -d /var/www/rcps/releases/20190222115825; then echo "Directory does not exist '/var/www/rcps/releases/20190222115825'" 1>&2; false; fi
+ DEBUG [dbafd2d4] Finished in 0.560 seconds with exit status 0 (successful).
+  INFO [0ba01154] Running /usr/bin/env echo "a74589349b188740f4e978659e1a009107b094c2" > REVISION as ec2-user@3.120.234.9
+ DEBUG [0ba01154] Command: cd /var/www/rcps/releases/20190222115825 && /usr/bin/env echo "a74589349b188740f4e978659e1a009107b094c2" > REVISION
+  INFO [bc2f8d5a] Finished in 0.633 seconds with exit status 0 (successful).
+  INFO [aa07663c] Running /usr/bin/env mkdir -p /var/www/rcps/releases/20190222115825 as ec2-user@3.120.234.9
+ DEBUG [aa07663c] Command: /usr/bin/env mkdir -p /var/www/rcps/releases/20190222115825
+  INFO [66731aab] Finished in 0.819 seconds with exit status 0 (successful).
+ DEBUG [de11cae3] Running [ -L /var/www/rcps/releases/20190222115825/.bundle ] as ec2-user@3.120.234.9
+ DEBUG [de11cae3] Command: [ -L /var/www/rcps/releases/20190222115825/.bundle ]
+ DEBUG [e9cf8af6] Finished in 0.598 seconds with exit status 1 (failed).
+ DEBUG [75477e56] Running [ -d /var/www/rcps/releases/20190222115825/.bundle ] as ec2-user@3.120.234.9
+ DEBUG [75477e56] Command: [ -d /var/www/rcps/releases/20190222115825/.bundle ]
+ DEBUG [7c1a1961] Finished in 0.606 seconds with exit status 1 (failed).
+  INFO [7803b1c8] Running /usr/bin/env ln -s /var/www/rcps/shared/.bundle /var/www/rcps/releases/20190222115825/.bundle as ec2-user@3.120.234.9
+ DEBUG [7803b1c8] Command: /usr/bin/env ln -s /var/www/rcps/shared/.bundle /var/www/rcps/releases/20190222115825/.bundle
+  INFO [f22b309a] Finished in 0.560 seconds with exit status 0 (successful).
+ DEBUG [28be6446] Running [ -L /var/www/rcps/releases/20190222115825/.bundle ] as ec2-user@3.120.234.9
+ DEBUG [28be6446] Command: [ -L /var/www/rcps/releases/20190222115825/.bundle ]
+ DEBUG [c31b6314] Finished in 0.693 seconds with exit status 0 (successful).
+ DEBUG [6defd1ae] Running if test ! -d /var/www/rcps/releases/20190222115825; then echo "Directory does not exist '/var/www/rcps/releases/20190222115825'" 1>&2; false; fi as ec2-user@3.120.234.9
+ DEBUG [6defd1ae] Command: if test ! -d /var/www/rcps/releases/20190222115825; then echo "Directory does not exist '/var/www/rcps/releases/20190222115825'" 1>&2; false; fi
+ DEBUG [5d697207] Finished in 0.713 seconds with exit status 0 (successful).
+ DEBUG [14b225a1] Running ~/.rvm/bin/rvm default do bundle check --path /var/www/rcps/shared/bundle as ec2-user@3.120.234.9
+ DEBUG [14b225a1] Command: cd /var/www/rcps/releases/20190222115825 && ~/.rvm/bin/rvm default do bundle check --path /var/www/rcps/shared/bundle
+ DEBUG [2c97a575] 	You must use Bundler 2 or greater with this lockfile.
+ DEBUG [2c97a575] Finished in 1.231 seconds with exit status 20 (failed).
+  INFO [7af2f711] Running ~/.rvm/bin/rvm default do bundle install --path /var/www/rcps/shared/bundle --jobs 4 --without development test --deployment --quiet as ec2-user@3.120.234.9
+ DEBUG [7af2f711] Command: cd /var/www/rcps/releases/20190222115825 && ~/.rvm/bin/rvm default do bundle install --path /var/www/rcps/shared/bundle --jobs 4 --without development test --deployment --quiet
+ DEBUG [abffcd36] 	You must use Bundler 2 or greater with this lockfile.
