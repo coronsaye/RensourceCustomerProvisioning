@@ -53,4 +53,4 @@ set :linked_dirs, fetch(:linked_dirs, []) << '.bundle'
 set :ssh_options, verify_host_key: :always
 #set :rbenv_ruby, "2.6.1"
 
-require 'bundler/capistrano'
+#require 'bundler/capistrano'
