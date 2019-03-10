@@ -1,0 +1,19 @@
+version: '3.6'
+services:
+  customeridgenservice:
+    image: 472947443578.dkr.ecr.eu-central-1.amazonaws.com/customeridgenservice 
+    build: .
+    environment:
+    - RAILS_ENV=production
+    - RACK_ENV=production
+    - DOCKERIZED=true
+    - DB_HOST=opencell-prod-rds.ce2qcqdugmxq.eu-central-1.rds.amazonaws.com
+    - DB_NAME=shopmapping
+    - DB_USER=opencell_prod
+    - DB_PASSWORD=0p3nce!!-pr0d
+    volumes:
+        - ./:/app
+    working_dir: /app
+    command: puma
+    ports:
+        - 4000:4000

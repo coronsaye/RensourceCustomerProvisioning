@@ -23,7 +23,6 @@ default: &default
 
 development:
   <<: *default
-  database: CustomerProvisioningService_development
   database: shopmapping
   username: opencell_db_user
   password: 0pence!!_db_passw0rd
@@ -90,7 +89,7 @@ test:
 production:
   <<: *default
   database: shopmapping
-  username: opencell_db_user
-  password: 0pence!!_db_passw0rd
-  host: opencell-pre-prod.ce2qcqdugmxq.eu-central-1.rds.amazonaws.com
+  username: opencell_prod
+  password: 0p3nce!!-pr0d
+  host: opencell-prod-rds.ce2qcqdugmxq.eu-central-1.rds.amazonaws.com
   port: 5432

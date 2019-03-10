@@ -1,35 +1,34 @@
 class CustomersController < ApplicationController
-
-  def fetch
-    @customer = Customer.where(market: params[:market])
-    render json: @customer
-  end
+  
+  require 'ostruct'
+  require './app/core/core.rb'
 
   def select
 
-    begin
-      if params[:type] == 1.to_s
-        @obj = Customer.where('market = ? and status = ?', params[:market], false).first
-      else
-        @obj = Account.where('market = ? and status = ?', params[:market], false).first
-      end
-
-      @refno = ''
-
-      if(@obj != nil)
-
-        @obj.status = true
-        @obj.save
-
-        @refno = @obj.ref_no.to_s
-
-
-      end
-    rescue Exception => exc
-      logger.error("Message for the log file #{exc.message}")
+    if params[:type] == 1.to_s
+      @obj = Customer.where('market = ? and status = ?', params[:market], false).first
+    else
+      @obj = Account.where('market = ? and status = ?', params[:market], false).first
     end
 
-    render json: '{status : '+ response.status.to_s+',message : '+ response.status_message+' ,refno: '+ @refno + '}'
+    @refno = ''
+
+    if(@obj != nil)
+
+      @obj.status = true
+      @obj.save
+
+      @refno = @obj.ref_no.to_s
+
+    end
+
+    if(@obj == nil)
+      resp = {:status => "404", :message => "not found",:ref_no => @refno}
+    else
+      resp = {:status => response.status.to_s, :message => response.status_message, :ref_no => @refno}
+    end
+
+    render json: resp
 
   end
 
@@ -38,47 +37,13 @@ class CustomersController < ApplicationController
     count = params[:count]
     start = params[:start]
     type = params[:type]
-
     market = params[:market]
-    count = count.to_i
-    start = start.to_i
-    len = 8
 
-    @list = []
-
-    while count > 0
-
-      count -= 1
-      start += 1
-
-      if start.to_s.length < len
-        pad = len - start.to_s.length
-        @value = '0' + start.to_s
-        while pad > 0
-          @value = '0' + @value
-          pad -= 1
-        end
-      end
-
-      if type == '1'
-        ref_no = market + '-' + @value
-        @obj = Customer.new
-      else
-        ref_no = market + @value
-        @obj = Account.new
-      end
-
-
-      @obj.market = market
-      @obj.ref_no = ref_no
-      @obj.status = false
-
-      @obj.save
-
-
-      @list.push(@obj)
-
-    end
+    @list = Core.generate_customerids(
+      market_code: market, 
+      no_of_ids: count, 
+      type_of_id: type, 
+      start_at: start)
 
     render json: @list
 

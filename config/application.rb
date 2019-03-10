@@ -35,6 +35,11 @@ module CustomerProvisioningService
     config.after_initialize do |app|
       app.routes.append{match '*path', :to => 'errors#not_found', via: [:get, :post]}
     end
+
+    logger           = ActiveSupport::Logger.new(STDOUT)
+    logger.formatter = config.log_formatter
+    config.log_tags  = [:subdomain, :uuid]
+    config.logger    = ActiveSupport::TaggedLogging.new(logger)
     #config.middleware.use "RequestResponseLogger"
   end
 end

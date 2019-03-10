@@ -31,3 +31,4 @@ class Logger
   end
 end
 use Logger # Does nothing with uppercase'd response, just logs it to stdout
+

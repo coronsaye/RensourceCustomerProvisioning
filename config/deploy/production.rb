@@ -61,8 +61,8 @@
 #   }
 
 
-set :stage, :production
-set :rails_env, :production
-set :branch, "master"
+#set :stage, :production
+#set :rails_env, :production
+#set :branch, "master"
 
-server "3.120.234.9", user: "ec2-user", roles: %w{app db web}
+#server "3.120.234.9", user: "ec2-user", roles: %w{app db web}

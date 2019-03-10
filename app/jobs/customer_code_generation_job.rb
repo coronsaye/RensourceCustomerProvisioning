@@ -1,0 +1,4 @@
+class CustomerCodeGenerationJob < ApplicationJob
+
+    
+end
